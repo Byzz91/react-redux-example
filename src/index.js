@@ -7,6 +7,8 @@ import { createStore } from 'redux'
 import reducers from './reducers'
 // import * as ACTIONS from './actions'
 
+import { Provider } from 'react-redux'
+
 const store = createStore(reducers)
 
 /**
@@ -16,6 +18,8 @@ const store = createStore(reducers)
  * 2. getState()
  * 3. subscribe(listener)
  * 4. replaceReducer(nextReducer)
+ * 
+ * 뷰 레이어 바인딩 The view layer binding
  */
 // const unsubscribe = store.subscribe(() => console.log( store.getState() ))
 
@@ -28,4 +32,9 @@ const store = createStore(reducers)
 
 // store.dispatch( ACTIONS.setColor([111, 111, 111]) )
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    document.getElementById('root')
+)

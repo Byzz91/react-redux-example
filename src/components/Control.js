@@ -10,8 +10,8 @@ export default class Control extends Component {
 
   static defaultProps = {
     onPlus: Control._fAnonnymouse('onPlus'),
-    onSubtract: Control._fAnonnymouse('onPlus'),
-    onRandomizeColor: Control._fAnonnymouse('onPlus')
+    onSubtract: Control._fAnonnymouse('onSubtract'),
+    onRandomizeColor: Control._fAnonnymouse('onRandomizeColor')
   }
 
   static _fAnonnymouse(callName) {
