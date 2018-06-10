@@ -1,4 +1,7 @@
-import * as types from '../actions/ActionTypes'
+import {
+    INCREMENT,
+    DECREMENT
+} from '../actions/ActionTypes'
 
 const initialState = {
     number: 0,
@@ -13,16 +16,16 @@ const initialState = {
 
 export default function counter(state = initialState, action) {
     switch (action.type) {
-        case types.INCREMENT:
-            return { 
-                ...state, 
+        case INCREMENT:
+            return {
+                ...state,
                 number: state.number + 1,
-                dumbOjbect: {
+                dumbObject: {
                     ...state.dumbObject,
                     u: 0
                 }
             }
-        case types.DECREMENT:
+        case DECREMENT:
             return {
                 ...state,
                 number: state.number - 1
